@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sentiment Analysis — U-Well</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-poppins bg-gray-50 text-gray-800">
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-teal-400 to-cyan-500 text-white">💚</div><span class="text-2xl font-bold">U-Well</span></div>
+      <a href="index.html" class="text-teal-600 font-semibold">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-12">
+    <div class="bg-white p-8 rounded-3xl shadow-lg">
+      <h1 class="text-2xl font-bold mb-3">Sentiment Analysis</h1>
+      <p class="text-gray-600 mb-4">Analyze text or voice journals to surface emotion trends and helpful suggestions. Below is a safe demo (client-side).</p>
+
+      <textarea id="sent-text" class="w-full p-4 rounded-xl border border-gray-200" placeholder="Paste journal text here..."></textarea>
+      <div class="mt-4 flex gap-3">
+        <button id="analyze-btn" class="px-4 py-2 bg-teal-500 text-white rounded-full">Analyze</button>
+        <button id="clear-sent" class="px-4 py-2 border rounded-full">Clear</button>
+      </div>
+
+      <div id="sent-result" class="mt-6 text-gray-700"></div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8 mt-12">
+    <div class="container mx-auto text-center">&copy; 2025 U-Well</div>
+  </footer>
+
+  <script>
+    function simpleSentiment(text){
+      const neg = ['sad','lonely','hopeless','tired','anxious','stressed','depressed','angry','overwhelmed'];
+      const pos = ['happy','good','great','calm','relaxed','better','hopeful','ok','fine'];
+      let score=0; const lower=text.toLowerCase();
+      neg.forEach(w=>{ if(lower.includes(w)) score-=1 });
+      pos.forEach(w=>{ if(lower.includes(w)) score+=1 });
+      return score;
+    }
+    document.getElementById('analyze-btn').addEventListener('click', ()=>{
+      const txt = document.getElementById('sent-text').value.trim();
+      if(!txt){ document.getElementById('sent-result').textContent='Paste some text to analyze.'; return; }
+      const s = simpleSentiment(txt);
+      const tone = s <= -2 ? 'Negative' : s<0 ? 'Some concern' : s===0 ? 'Neutral' : 'Positive';
+      document.getElementById('sent-result').innerHTML = `<div><strong>Tone:</strong> ${tone} (score ${s})</div>
+        <div class="mt-2 text-sm text-gray-600">Note: demo only. For production, call a secure server-side model (Gemini/other) and run safety checks.</div>`;
+    });
+    document.getElementById('clear-sent').addEventListener('click', ()=>{ document.getElementById('sent-text').value=''; document.getElementById('sent-result').textContent=''; });
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "type": "error",
+  "summary": "No image file provided",
+  "recommendations": [
+    "Please upload a JPG/PNG image"
+  ],
+  "notes": "Image file is required",
+  "error_code": "NO_IMAGE",
+  "timestamp": "2025-09-20 17:27:44"
+}

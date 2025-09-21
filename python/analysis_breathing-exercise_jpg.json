@@ -1,0 +1,31 @@
+{
+  "summary": "Slouch, forward head, and neck tension detected.",
+  "recommendations": [
+    "Sit up straight and roll shoulders back.",
+    "Keep head aligned with spine, screen at eye level.",
+    "Gently stretch your neck.",
+    "Take breaks every 30 minutes."
+  ],
+  "notes": "Full body image and better lighting would improve analysis.",
+  "score": 35,
+  "posture_type": "needs_improvement",
+  "slouch_detected": true,
+  "forward_head_detected": true,
+  "neck_tension_detected": true,
+  "confidence": 0.85,
+  "analysis_timestamp": "2025-09-20 17:55:21",
+  "landmark_count": 33,
+  "image_dimensions": {
+    "width": 1200,
+    "height": 794
+  },
+  "timestamp": "2025-09-20 17:55:21",
+  "session_id": "breathing_test_fixed",
+  "processing_time": 0.37,
+  "api_version": "1.0.0",
+  "image_info": {
+    "filename": "breathing-exercise.jpg",
+    "size_bytes": 196044,
+    "content_type": "image/jpeg"
+  }
+}

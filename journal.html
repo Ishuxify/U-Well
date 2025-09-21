@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - U-Well</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="bg-gradient-to-br from-teal-50 to-blue-50">
+    <!-- Nav (from index, adapted) -->
+    <nav class="bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <h1 class="text-2xl font-bold text-teal-600">💚 U-Well</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="nav-link">🏠 Home</a>
+                    <a href="feature-chatbot.html" class="nav-link">💬 Chat</a>
+                    <a href="#" class="nav-link active">📖 Journal</a>
+                    <a href="#" class="nav-link">🧠 Wellness</a>
+                    <a href="#" class="nav-link">👤 Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Journal -->
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">Daily Journal</h1>
+        <p id="today-readout" class="text-gray-600 mb-4"></p>
+
+        <!-- Mood Selection -->
+        <div class="mb-6">
+            <label class="block text-lg font-medium mb-2">How are you feeling today?</label>
+            <div class="flex gap-3 flex-wrap">
+                <button class="emoji-option" data-mood="happy" aria-checked="false">😊</button>
+                <button class="emoji-option" data-mood="neutral" aria-checked="false">🙂</button>
+                <button class="emoji-option" data-mood="meh" aria-checked="false">😐</button>
+                <button class="emoji-option" data-mood="sad" aria-checked="false">😞</button>
+                <button class="emoji-option" data-mood="angry" aria-checked="false">😡</button>
+                <button class="emoji-option" data-mood="tired" aria-checked="false">😴</button>
+            </div>
+        </div>
+
+        <!-- Entry Text -->
+        <div class="mb-6">
+            <label class="block text-lg font-medium mb-2">What's on your mind?</label>
+            <textarea id="entry-text" rows="6" placeholder="Write freely... no judgment here." class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-4 mb-6">
+            <button id="save-entry" class="bg-teal-600 text-white px-6 py-2 rounded-lg">Save Entry</button>
+            <button id="insights-btn" class="border border-teal-600 text-teal-600 px-6 py-2 rounded-lg">✨ AI Insights</button>
+            <button id="download-btn" class="bg-gray-500 text-white px-6 py-2 rounded-lg">⤓ Download</button>
+        </div>
+        <p class="text-sm text-gray-500">Entries saved locally in your browser</p>
+
+        <!-- Mood Trends -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-4">Mood Trends (7 days)</h2>
+            <canvas id="mood-chart" width="400" height="200" class="w-full rounded-lg border"></canvas>
+        </div>
+
+        <!-- Recent Entries -->
+        <div>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold">Recent Entries</h2>
+                <button id="clear-entries" class="text-sm text-red-600">Clear</button>
+            </div>
+            <ul id="recent-entries" class="space-y-3"></ul>
+        </div>
+    </main>
+
+    <!-- Insights Modal -->
+    <div id="insights-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full mx-4 max-h-96 overflow-y-auto">
+            <button id="close-insights" class="float-right text-gray-500">&times;</button>
+            <h3 class="text-xl font-bold mb-4">AI Insights</h3>
+            <ul id="insights-list" class="space-y-2 mb-4"></ul>
+            <button id="insights-close-bottom" class="w-full bg-teal-600 text-white py-2 rounded">Close</button>
+            <div class="mt-4 text-xs text-gray-500">Note: Demo analysis. Production: Server AI with safety checks.</div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 hidden bg-gray-800 text-white px-4 py-2 rounded">Saved!</div>
+
+    <script src="./journal.js" defer></script>
+</body>
+</html>

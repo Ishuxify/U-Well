@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>U-Well — Your Mental Wellness Companion</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-poppins bg-gray-50 text-gray-800">
+
+  <!-- HEADER / NAV -->
+  <header class="bg-white shadow sticky top-0 z-40">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between py-4">
+        <div class="flex items-center gap-3">
+          <div class="brand flex items-center gap-2">
+            <div class="logo w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-teal-400 to-cyan-500 text-white shadow-lg">
+              <!-- emoji logo -->
+              <img src="Assests/Uwell logo.png" alt="U-Well logo" class="w-full h-full object-contain">
+            </div>
+            <span class="text-2xl font-bold text-gray-900">U-Well</span>
+          </div>
+        </div>
+
+        <!-- Desktop links -->
+        <div class="hidden md:flex items-center gap-6">
+          <a class="nav-link flex items-center gap-2" href="#features">
+            <span role="img" aria-label="features">✨</span>
+            Features
+          </a>
+          <a class="nav-link flex items-center gap-2" href="#community">
+            <span role="img" aria-label="community">👥</span>
+            Community
+          </a>
+          <a class="nav-link flex items-center gap-2" href="#chatbot">
+            <span role="img" aria-label="chat">💬</span>
+            Chat
+          </a>
+          <a class="nav-link flex items-center gap-2" href="#posture">
+            <span role="img" aria-label="posture">🧍</span>
+            Posture
+          </a>
+          <a class="nav-link flex items-center gap-2" href="#crisis">
+            <span role="img" aria-label="support">🚨</span>
+            Support
+          </a>
+
+          <a href="#chatbot" class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full shadow">
+            <span role="img" aria-label="talk to ai">▶️</span>
+            <span class="font-semibold">Talk to AI</span>
+          </a>
+        </div>
+
+        <!-- MOBILE HAMBURGER -->
+        <div class="md:hidden">
+          <button id="nav-toggle" aria-label="Open menu" class="p-2 rounded-md focus:outline-none focus:ring">
+            <span id="nav-open-icon" class="text-2xl">☰</span>
+            <span id="nav-close-icon" class="text-2xl hidden">✕</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col gap-3 px-2">
+          <a class="mobile-link flex items-center gap-2" href="#features">✨ Features</a>
+          <a class="mobile-link flex items-center gap-2" href="#community">👥 Community</a>
+          <a class="mobile-link flex items-center gap-2" href="#chatbot">💬 Chat</a>
+          <a class="mobile-link flex items-center gap-2" href="#posture">🧍 Posture</a>
+          <a class="mobile-link flex items-center gap-2" href="#crisis">🚨 Support</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        <div class="hero-blob blob-1" aria-hidden="true"></div>
+        <div class="hero-blob blob-2" aria-hidden="true"></div>
+
+      <div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+          Your private AI companion for <br>
+          <span class="text-gradient">stress relief</span> and mental wellness
+        </h1>
+        <p class="mt-6 text-lg text-gray-600 max-w-2xl">
+          Personalized AI support in Hindi & English — mood tracking, posture correction, sentiment insights, and a safe, stigma-free space to talk.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="#chatbot" class="inline-flex items-center gap-3 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow">
+            <span role="img" aria-label="chat">💬</span>
+            <span>Chat with AI</span>
+          </a>
+          <a href="journal.html" class="inline-flex items-center gap-3 border-2 border-teal-500 text-teal-600 px-6 py-3 rounded-full font-semibold hover:bg-teal-50 transition">
+            <span role="img" aria-label="journal">📖</span>
+            <span>Start Journaling</span>
+          </a>
+        </div>
+      </div>
+
+       
+        <div class="flex justify-center">
+          <video autoplay loop muted playsinline class="rounded-3xl shadow-2xl w-full max-w-xl object-cover">
+         <source src="Assests/Uvid.mp4" type="video/mp4">
+         </video>
+        </div>
+    </section>
+<!-- FEATURES -->
+<section id="features" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8">Key Features</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- AI Chatbot -->
+    <a href="feature-chatbot.html" class="feature-card flex items-start gap-4 group" aria-label="AI-Powered Chatbot">
+      <span class="icon-emoji" role="img" aria-hidden="true">🤖</span>
+      <div>
+        <h3 class="mt-1 text-xl font-semibold group-hover:text-teal-600">AI-Powered Chatbot</h3>
+        <p class="mt-2 text-gray-600">Bilingual CBT-style chats in Hindi/English — feels like a dost.</p>
+      </div>
+    </a>
+
+    <!-- Guided Wellness Exercises (was Posture) -->
+    <a href="feature-exercises.html" class="feature-card flex items-start gap-4 group" aria-label="Guided Wellness Exercises">
+      <span class="icon-emoji" role="img" aria-hidden="true">🧘</span>
+      <div>
+        <h3 class="mt-1 text-xl font-semibold group-hover:text-teal-600">Guided Wellness Exercises</h3>
+        <p class="mt-2 text-gray-600">Breathing, grounding & micro-stretches with adaptive guidance.</p>
+      </div>
+    </a>
+
+    <!-- Sentiment -->
+    <a href="feature-sentiment.html" class="feature-card flex items-start gap-4 group" aria-label="Sentiment Analysis">
+      <span class="icon-emoji" role="img" aria-hidden="true">📊</span>
+      <div>
+        <h3 class="mt-1 text-xl font-semibold group-hover:text-teal-600">Sentiment Analysis</h3>
+        <p class="mt-2 text-gray-600">Text & voice analysis to spot emotion trends and suggest tips.</p>
+      </div>
+    </a>
+
+    <!-- Professionals -->
+    <a href="feature-professionals.html" class="feature-card flex items-start gap-4 group" aria-label="Connect with Professionals">
+      <span class="icon-emoji" role="img" aria-hidden="true">👥</span>
+      <div>
+        <h3 class="mt-1 text-xl font-semibold group-hover:text-teal-600">Connect with Professionals</h3>
+        <p class="mt-2 text-gray-600">When AI spots higher need, connect to licensed counselors & referrals.</p>
+      </div>
+    </a>
+
+    <!-- Knowledge Hub -->
+    <a href="feature-hub.html" class="feature-card flex items-start gap-4 group" aria-label="Curated Knowledge Hub">
+      <span class="icon-emoji" role="img" aria-hidden="true">📚</span>
+      <div>
+        <h3 class="mt-1 text-xl font-semibold group-hover:text-teal-600">Curated Knowledge Hub</h3>
+        <p class="mt-2 text-gray-600">Bilingual articles and low-bandwidth videos for practical help.</p>
+      </div>
+    </a>
+
+    <!-- Safety Net -->
+    <a href="feature-safety.html" class="feature-card flex items-start gap-4 group" aria-label="Hybrid Safety Net">
+      <span class="icon-emoji" role="img" aria-hidden="true">🚨</span>
+      <div>
+        <h3 class="mt-1 text-xl font-semibold group-hover:text-teal-600">Hybrid Safety Net</h3>
+        <p class="mt-2 text-gray-600">Detects crisis phrases and shares helplines & local resources instantly.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+    <!-- CHATBOT -->
+    <section id="chatbot" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4">Talk to U-Well</h2>
+      <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">Ask anything — from exam anxiety to daily low mood. This demo uses a local sentiment demo; later connect Gemini or OpenAI.</p>
+
+      <div class="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl border border-gray-100 p-6 flex flex-col" style="height:60vh;">
+        <div id="chat-messages" class="flex-grow overflow-y-auto space-y-4 pr-2">
+          <div class="bot-message bg-gray-100 text-gray-800 p-4 rounded-xl shadow-sm max-w-[85%]">
+            <!-- bot icon + message -->
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-700">
+                <span role="img" aria-label="bot">🤖</span>
+              </div>
+              <div>Hi! I'm U-Well. How are you feeling today?</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex gap-3 items-center">
+          <button id="advice-btn" class="px-4 py-2 rounded-full bg-teal-50 text-teal-700 font-semibold hover:bg-teal-100">
+            <span role="img" aria-label="advice">✨</span>
+            ✨ Get Wellness Advice
+          </button>
+          <input id="chat-input" type="text" placeholder="Type your message..." class="flex-grow px-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-1 focus:ring-teal-500">
+          <button id="send-btn" class="px-6 py-3 bg-teal-500 text-white rounded-full font-semibold hover:bg-teal-600">
+            <span role="img" aria-label="send">📨</span>
+            Send
+          </button>
+        </div>
+
+        <div id="sentiment-result" class="mt-3 text-sm text-gray-600"></div>
+      </div>
+    </section>
+
+    <!-- POSTURE -->
+    <section id="posture" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4">Try Pyschological Exercises (Demo)</h2>
+      <p class="text-center text-gray-600 mb-6">Allow webcam for a simple posture demo. We'll show a placeholder feedback — later integrate Gemini Vision for pose analysis and guided excercises.</p>
+
+      <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="bg-white p-4 rounded-2xl shadow">
+          <video id="webcam" autoplay playsinline class="w-full h-64 bg-black rounded-lg object-cover"></video>
+          <p id="posture-feedback" class="mt-3 text-sm text-gray-700">Webcam is off. Click Start to enable.</p>
+          <div class="mt-3 flex gap-3">
+            <button id="start-webcam" class="px-4 py-2 bg-teal-500 text-white rounded-full flex items-center gap-2">
+              <span role="img" aria-label="camera">📷</span>
+              Start Webcam
+            </button>
+            <button id="stop-webcam" class="px-4 py-2 border rounded-full flex items-center gap-2">
+              <span role="img" aria-label="stop">⏹️</span>
+              Stop
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="text-lg font-semibold">Live Tips</h3>
+          <ul id="posture-tips" class="mt-3 list-disc pl-5 text-gray-600">
+            <li>Sit with feet flat on the floor</li>
+            <li>Keep your shoulders relaxed</li>
+            <li>Bring your screen to eye level</li>
+            <li>Take a short break every 30 minutes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- COMMUNITY -->
+<section id="community" class="bg-gray-100 py-12">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-6">Community Benefits</h2>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">
+      Free, anonymous & stigma-free support for youth across cities and villages — early detection and timely help to build stronger, resilient communities.
+    </p>
+
+    <!-- quick stats -->
+    <div class="stats grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8" aria-hidden="false">
+      <div class="stat-card p-4 bg-white rounded-xl shadow-sm text-center">
+        <div class="text-2xl">🌍</div>
+        <div class="text-sm text-gray-500">Reach</div>
+        <div class="text-xl font-semibold text-gray-900">120k+</div>
+      </div>
+      <div class="stat-card p-4 bg-white rounded-xl shadow-sm text-center">
+        <div class="text-2xl">💬</div>
+        <div class="text-sm text-gray-500">Chats / month</div>
+        <div class="text-xl font-semibold text-gray-900">45k</div>
+      </div>
+      <div class="stat-card p-4 bg-white rounded-xl shadow-sm text-center">
+        <div class="text-2xl">🗣️</div>
+        <div class="text-sm text-gray-500">Languages</div>
+        <div class="text-xl font-semibold text-gray-900">EN / HI</div>
+      </div>
+      <div class="stat-card p-4 bg-white rounded-xl shadow-sm text-center">
+        <div class="text-2xl">🤝</div>
+        <div class="text-sm text-gray-500">Partners</div>
+        <div class="text-xl font-semibold text-gray-900">50+</div>
+      </div>
+    </div>
+
+    <!-- feature cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="card-brief text-center p-6 bg-white rounded-2xl shadow transition-transform transform hover:-translate-y-3">
+        <div class="text-3xl mb-3" aria-hidden="true">🆓</div>
+        <h4 class="mb-2 font-semibold">Accessible Support</h4>
+        <p class="text-gray-600">Free, 24/7 help across cities & villages. Low-bandwidth content available.</p>
+      </div>
+
+      <div class="card-brief text-center p-6 bg-white rounded-2xl shadow transition-transform transform hover:-translate-y-3">
+        <div class="text-3xl mb-3" aria-hidden="true">🫂</div>
+        <h4 class="mb-2 font-semibold">Stigma-Free Zone</h4>
+        <p class="text-gray-600">Anonymous and relatable chats normalize mental health conversations.</p>
+      </div>
+
+      <div class="card-brief text-center p-6 bg-white rounded-2xl shadow transition-transform transform hover:-translate-y-3">
+        <div class="text-3xl mb-3" aria-hidden="true">⚠️</div>
+        <h4 class="mb-2 font-semibold">Crisis Prevention</h4>
+        <p class="text-gray-600">Early detection reduces severe outcomes and enables timely intervention.</p>
+      </div>
+
+      <div class="card-brief text-center p-6 bg-white rounded-2xl shadow transition-transform transform hover:-translate-y-3">
+        <div class="text-3xl mb-3" aria-hidden="true">🚀</div>
+        <h4 class="mb-2 font-semibold">Empowered Youth</h4>
+        <p class="text-gray-600">Build focus, resilience and better academic/career outcomes across communities.</p>
+      </div>
+    </div>
+
+    <!-- testimonials carousel -->
+    <div class="max-w-3xl mx-auto mb-6">
+      <div class="testimonial-wrapper bg-white p-6 rounded-2xl shadow">
+        <div id="testimonials" class="relative overflow-hidden h-28">
+          <!-- slide 1 -->
+          <blockquote class="testimonial-slide p-4 absolute inset-0" data-index="0" aria-hidden="false">
+            <p class="text-gray-800">"U-Well helped me manage board exam stress — the breathing exercises calmed me before the test."</p>
+            <footer class="mt-3 text-sm text-gray-600">— Aisha, Delhi</footer>
+          </blockquote>
+
+          <!-- slide 2 -->
+          <blockquote class="testimonial-slide p-4 absolute inset-0 hidden" data-index="1" aria-hidden="true">
+            <p class="text-gray-800">"I felt alone, but anonymous chat made it easy to open up. The suggested tips actually worked."</p>
+            <footer class="mt-3 text-sm text-gray-600">— Rohit, Ranchi</footer>
+          </blockquote>
+
+          <!-- slide 3 -->
+          <blockquote class="testimonial-slide p-4 absolute inset-0 hidden" data-index="2" aria-hidden="true">
+            <p class="text-gray-800">"The school's counselor partnership and resources helped students in our class cope better."</p>
+            <footer class="mt-3 text-sm text-gray-600">— Ms. Sen, Teacher</footer>
+          </blockquote>
+        </div>
+
+        <!-- dots -->
+        <div class="mt-4 flex justify-center gap-2">
+          <button class="dot w-3 h-3 rounded-full bg-gray-300" data-dot="0" aria-label="Show testimonial 1"></button>
+          <button class="dot w-3 h-3 rounded-full bg-gray-300" data-dot="1" aria-label="Show testimonial 2"></button>
+          <button class="dot w-3 h-3 rounded-full bg-gray-300" data-dot="2" aria-label="Show testimonial 3"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="#chatbot" class="inline-flex items-center gap-3 px-6 py-3 bg-teal-500 text-white rounded-full shadow-lg hover:bg-teal-600 transition">
+        <span role="img" aria-label="join">💬</span>
+        <span class="font-semibold">Join the Community</span>
+      </a>
+
+      <button id="volunteer-btn" class="ml-4 inline-flex items-center gap-2 px-4 py-2 border rounded-full hover:shadow-sm transition mt-4 sm:mt-0" aria-label="Volunteer">
+        <span role="img" aria-label="volunteer">🤝</span> Volunteer / Partner
+      </button>
+    </div>
+
+  </div>
+</section>
+
+    <!-- CRISIS -->
+<section id="crisis" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4">Immediate Support</h2>
+  <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow border border-red-50 text-center">
+    <p class="text-lg text-gray-700">If you feel in danger or hopeless, please reach out now.</p>
+    <div class="mt-4 space-y-2">
+      <div class="text-red-600 font-semibold">AASRA Helpline: +91-9820466726</div>
+      <div class="text-red-600 font-semibold">NIMHANS Helpline: 080-46110007</div>
+    </div>
+
+    <!-- CENTERED BUTTON -->
+    <div class="mt-6 flex justify-center">
+      <button id="open-crisis-modal" class="px-8 py-3 bg-red-500 text-white rounded-full shadow-lg flex items-center gap-3 hover:bg-red-600 transition">
+        <span role="img" aria-label="phone" class="text-lg">📞</span>
+        <span class="font-semibold">I Need Help Now</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; 2025 U-Well. Made for the youth of India.</p>
+      <p> All Rights Reserved to Ishuxify...</p>
+    </div>
+  </footer>
+
+  <!-- CRISIS MODAL -->
+  <div id="crisis-modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-2xl p-6 max-w-lg w-full">
+      <h3 class="text-xl font-bold text-red-600 flex items-center gap-3">
+        <span role="img" aria-label="alert">⚠️</span>
+        Immediate Help
+      </h3>
+      <p class="mt-2 text-gray-700">If you're in immediate danger, call local emergency services. Below are national helplines:</p>
+      <ul class="mt-4 list-disc pl-5 text-gray-700">
+        <li><strong>AASRA:</strong> +91-9820466726</li>
+        <li><strong>NIMHANS:</strong> 080-46110007</li>
+      </ul>
+      <div class="mt-6 flex justify-end gap-3">
+        <button id="close-crisis-modal" class="px-4 py-2 rounded-full border">Close</button>
+        <a href="tel:+919820466726" class="px-4 py-2 rounded-full bg-red-500 text-white">Call AASRA</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

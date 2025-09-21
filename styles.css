@@ -1,0 +1,275 @@
+
+
+/* ---------- variables ---------- */
+:root{
+  --bg-1: #e6fbf7;
+  --bg-2: #e6f2ff;
+  --teal-500: #15B0A6;
+  --teal-600: #0e9a8f;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.6);
+  --shadow-1: 0 6px 20px rgba(16,24,40,0.06);
+  --shadow-2: 0 12px 40px rgba(16,24,40,0.08);
+  --accent: linear-gradient(90deg, #06b6d4 0%, #0ea5a4 40%, #06b6d4 100%);
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111827;
+  background: radial-gradient(1200px 500px at 10% 10%, rgba(11, 116, 110, 0.06), transparent 8%),
+              radial-gradient(1000px 400px at 90% 90%, rgba(3, 105, 161, 0.03), transparent 8%),
+              linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-y: auto;
+}
+
+/* ---------- hero layered background + blobs ---------- */
+/* target the first section inside main (hero) */
+main > section:first-of-type{
+  position: relative;
+  overflow: visible;
+}
+/* subtle frosted panel behind hero text */
+main > section:first-of-type::before{
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  top: -12%;
+  bottom: -12%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.35), rgba(255,255,255,0.12));
+  filter: blur(40px);
+  transform: skewY(-2deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* floating blob shapes */
+main > section:first-of-type::after,
+main > section:first-of-type .hero-blob {
+  pointer-events: none;
+}
+main > section:first-of-type .hero-blob {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  opacity: .28;
+  filter: blur(28px);
+  transform: translate3d(0,0,0);
+}
+main > section:first-of-type .hero-blob.blob-1{
+  background: radial-gradient(circle at 30% 30%, #06b6d4 0%, #0ea5a4 40%, transparent 70%);
+  left: -8%;
+  top: -6%;
+  animation: floatSlow 10s ease-in-out infinite;
+}
+main > section:first-of-type .hero-blob.blob-2{
+  background: radial-gradient(circle at 60% 40%, #7dd3fc 0%, #8be7d4 35%, transparent 70%);
+  right: -6%;
+  bottom: -8%;
+  width: 420px;
+  height: 420px;
+  opacity: .22;
+  animation: floatSlow 14s ease-in-out infinite reverse;
+}
+@keyframes floatSlow{
+  0%{transform: translateY(0px) rotate(0deg)}
+  50%{transform: translateY(-14px) rotate(6deg)}
+  100%{transform: translateY(0px) rotate(0deg)}
+}
+
+/* ensure hero content sits above blobs */
+main > section:first-of-type > * { position: relative; z-index: 2 }
+
+/* ---------- utility / text gradient ---------- */
+.text-gradient {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* ---------- navigation ---------- */
+header{backdrop-filter: blur(6px); background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(15,23,42,0.03);}
+.brand .logo{transition: transform .35s ease, box-shadow .35s ease}
+.brand .logo:hover{transform: translateY(-4px) scale(1.02); box-shadow: var(--shadow-2)}
+
+/* nav links */
+.nav-link, .mobile-link {
+  color: #374151;
+  font-weight: 600;
+  transition: color .18s ease, transform .12s ease;
+}
+.nav-link svg, .mobile-link svg { opacity: .9 }
+.nav-link:hover, .mobile-link:hover {
+  color: var(--teal-500);
+  transform: translateY(-3px);
+}
+
+/* mobile menu transition (Tailwind handles show/hide, add smoother) */
+#mobile-menu { transition: max-height .28s ease, opacity .28s ease; }
+
+/* ---------- feature cards ---------- */
+.feature-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-1);
+  border: 1px solid rgba(15,23,42,0.03);
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease, background .28s ease;
+  position: relative;
+  overflow: visible;
+}
+.feature-card .icon{
+  width: 3.2rem;
+  height: 3.2rem;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: .75rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+}
+.feature-card:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-2);
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(246, 255, 253, 1));
+}
+
+/* subtle accent ribbon */
+.feature-card::after{
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 6px;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(21,176,166,0.12), rgba(14,154,143,0.06));
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* ---------- community cards ---------- */
+.card-brief{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-brief:hover{ transform: translateY(-6px); box-shadow: var(--shadow-1)}
+
+/* ---------- hero image float ---------- */
+img.object-cover{
+  transform-origin: center;
+  transition: transform .7s cubic-bezier(.2,.9,.3,1);
+}
+img.object-cover:hover{
+  transform: translateY(-6px) rotate(-1deg) scale(1.02);
+}
+
+/* ---------- buttons ---------- */
+button, a.button {
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+button:active, a.button:active{ transform: translateY(1px) scale(.997) }
+
+/* primary pill */
+.btn-primary {
+  background: var(--teal-500);
+  color: #fff;
+  padding: .6rem 1.05rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(6,182,212,0.12);
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(6,182,212,0.12) }
+
+/* subtle bordered */
+.btn-outline {
+  border: 2px solid rgba(21,176,166,0.12);
+  background: rgba(255,255,255,0.9);
+}
+
+/* ---------- chat UI ---------- */
+.bot-message{
+  border-radius: 1rem;
+  animation: appearUp .28s cubic-bezier(.2,.9,.3,1);
+}
+.user-message{
+  background: var(--teal-500);
+  color: #fff;
+  padding: .6rem .9rem;
+  border-radius: 1rem;
+  display: inline-block;
+  max-width: 85%;
+  margin-left: auto;
+  box-shadow: 0 8px 22px rgba(6,182,212,0.09);
+  animation: popIn .18s ease;
+}
+
+/* chat bubbles appear */
+@keyframes appearUp {
+  from { transform: translateY(6px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}
+@keyframes popIn {
+  0% { transform: scale(.96); opacity: 0 }
+  60% { transform: scale(1.02); opacity: 1 }
+  100% { transform: scale(1); }
+}
+
+/* scrollbar styling for messages (nice and thin) */
+#chat-messages::-webkit-scrollbar{ width:8px; height:8px }
+#chat-messages::-webkit-scrollbar-thumb{ background: linear-gradient(180deg, rgba(99,102,241,0.16), rgba(14,165,233,0.08)); border-radius:999px }
+
+/* ---------- posture section ---------- */
+#webcam{
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+  border: 1px solid rgba(15,23,42,0.04);
+  transition: transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s ease;
+}
+#webcam:focus, #webcam:hover { transform: translateY(-4px); box-shadow: var(--shadow-2) }
+
+/* posture tips */
+#posture-tips li{ margin-bottom: .5rem; color: var(--muted) }
+
+/* ---------- crisis modal (fade + scale) ---------- */
+#crisis-modal {
+  transition: opacity .28s ease, transform .28s ease;
+}
+#crisis-modal.flex { opacity: 1; }
+#crisis-modal.hidden { opacity: 0; pointer-events: none; }
+
+/* animate inner modal */
+#crisis-modal > div {
+  transform: translateY(6px) scale(.98);
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), opacity .28s ease;
+}
+#crisis-modal.flex > div { transform: translateY(0) scale(1); }
+
+/* ---------- small helpers ---------- */
+.container { max-width: 1150px; margin-left:auto; margin-right:auto; }
+.rounded-3xl { border-radius: 1.25rem; }
+.rounded-2xl { border-radius: 1rem; }
+
+/* ---------- responsive tweaks ---------- */
+@media (max-width: 900px){
+  .feature-card{ padding: 1.25rem }
+  main > section:first-of-type::before { display: none } /* reduce blur on small screens */
+  main > section:first-of-type .hero-blob.blob-2 { display: none }
+}
+
+/* ---------- accessibility focus outlines ---------- */
+button:focus, a:focus, input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(6,182,212,0.10), 0 6px 20px rgba(2,6,23,0.06);
+  border-radius: 10px;
+}
+
+
